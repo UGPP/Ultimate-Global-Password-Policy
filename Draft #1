@@ -1,0 +1,31 @@
+Ultimate global password policy
+
+Password requirements
+
+Require:
+    Has at least a minimum length (minimum should be at least 8 characters)
+    Has at most a maximum length (maximum should be at least 64 characters)
+    Allowed characters: Printable ASCII and Unicode characters, plus space
+    Forced change of password after (suspected) breach
+
+Disallow:
+    Passwords obtained from database of previous breaches, which is kept up-to-date(max 100k password database)
+    Words and names from dictionaries of commonly used languages of the website’s target user group
+    Commonly used passwords
+    Context-specific characters strings: name of the service, details of the user, username, birthday, postcode, etc	
+
+UI for choosing password
+    Allow paste functionality, use of password manager
+    Allow user to show password for limited time
+    Show password strength estimate
+
+Login procedure
+    Escalatory pauses between after failed login attempts after a threshold (e.g. 5 consecutive failed attempts)
+    May require solving of Captcha after several (e.g.) consecutive failed attempts
+    Lock account after too many consecutive failed attempts (e.g. 100)
+
+Storage of user credentials
+No storing in plain text, hashed with minimum 32-bit random cryptographically strong credential-specific salt.
+
+Transport 
+Require transport level encryption using TLS and use HTTP Strict Transport Security
